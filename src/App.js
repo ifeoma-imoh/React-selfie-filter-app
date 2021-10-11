@@ -5,7 +5,8 @@ import axios from "axios";
 import { Cloudinary } from "@cloudinary/url-gen";
 import { Effect } from "@cloudinary/url-gen/actions/effect";
 
-let cloudName = "ifeomaimoh";
+//Add your cloud name
+let cloudName = "ADD-YOUR-CLOUD-NAME-HERE";
 const cld = new Cloudinary({
   cloud: {
     cloudName,
@@ -92,7 +93,8 @@ const App = () => {
       setLoading(true);
       const imageData = new FormData();
       imageData.append("file", data);
-      imageData.append("upload_preset", "puawvciu");
+      // Add your upload preset here
+      imageData.append("upload_preset", "ADD-YOUR-UPLOAD-PRESET-HERE");
       const res = await axios.post(
         ` https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
         imageData
