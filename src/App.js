@@ -53,7 +53,7 @@ function ImagePreviewer({ url, deleteImage }) {
   return url ? (
     <div className="img_box">
       <img src={url} alt="my_image" />
-      <button className="close_btn" onClick={deleteImage}>
+      <button className="delete_btn" onClick={deleteImage}>
         Delete
       </button>
     </div>
@@ -102,8 +102,6 @@ const App = () => {
       const imageDetails = res.data;
       setId(imageDetails.public_id);
       setPrevURL(imageDetails.url);
-      // console.log({ imageDetails });
-      // const img = cld.image(imageDetails.public_id);
     } catch (error) {
       console.log(error);
     } finally {
@@ -122,8 +120,6 @@ const App = () => {
     <section className="main">
       <article className="media_box">
         <div className="camera">
-          {/* web cam */}
-
           <Webcam
             ref={camRef}
             v
